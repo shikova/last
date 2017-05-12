@@ -23,6 +23,7 @@ class CreateContactsTable extends Migration
 
             $table->integer('speciality_id')->nullable()->unsigned()->index();
             $table->foreign('speciality_id')->references('id')->on('specialities')->onUpdate('cascade')->onDelete('set null');
+            $table->timestamps();
 
         });
     }

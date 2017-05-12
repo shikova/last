@@ -20,6 +20,8 @@ class CreateSpecialitiesTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories');
             $table->integer('parent_id')->nullable()->unsigned()->index();
             $table->foreign('parent_id')->references('id')->on('specialities')->onUpdate('cascade')->onDelete('set null');
+            $table->timestamps();
+
         });
     }
 

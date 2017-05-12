@@ -3,7 +3,7 @@
 use App\Role;
 use Illuminate\Database\Seeder;
 
-class DatabaseRoleSeed extends Seeder
+class TableRoleSeed extends Seeder
 {
     /**
      * Run the database seeds.

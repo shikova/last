@@ -26,6 +26,8 @@ class CreateAddressesTable extends Migration
 
             $table->double('latitude');
             $table->double('longitude');
+            $table->timestamps();
+
         });
     }
 
