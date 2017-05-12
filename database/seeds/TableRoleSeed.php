@@ -1,5 +1,6 @@
 <?php
 
+use App\Role;
 use Illuminate\Database\Seeder;
 
 class DatabaseRoleSeed extends Seeder
@@ -26,7 +27,7 @@ class DatabaseRoleSeed extends Seeder
         $role = Role::firstOrNew(['name' => 'professional ']);
         if (!$role->exists) {
             $role->fill([
-                'display_name' => 'Professional  User',
+                'display_name' => 'Professional User',
             ])->save();
         }
     }
