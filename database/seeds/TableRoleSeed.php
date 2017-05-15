@@ -27,7 +27,7 @@ class TableRoleSeed extends Seeder
         $role = Role::firstOrNew(['name' => 'professional ']);
         if (!$role->exists) {
             $role->fill([
-                'display_name' => 'Professional User',
+                'display_name' => 'Professional',
             ])->save();
         }
     }

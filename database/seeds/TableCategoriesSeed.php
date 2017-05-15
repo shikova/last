@@ -12,7 +12,7 @@ class TableCategoriesSeed extends Seeder
      */
     public function run()
     {
-        $list=array('DOCTOR','HOSPITAL','PHARMACY','FITNESS CENTER');
+        $list=array('DOCTOR','HOSPITAL','PHARMACY');
 
         foreach ($list as $item)
 
@@ -20,7 +20,6 @@ class TableCategoriesSeed extends Seeder
             $cat = Category::firstOrNew(['name' =>$item]);
             if (!$cat->exists)
             {
-
                 $cat->save();
             }
         }

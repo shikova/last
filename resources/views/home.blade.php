@@ -8,7 +8,9 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+
+                    {{$user->name}} you are logged in as {{$user->role->display_name}}
+
                 </div>
             </div>
         </div>

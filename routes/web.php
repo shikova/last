@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//Route::resource('user', 'UserController');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('user/edit', 'UserController@edit')->name('user.edit');
+    Route::put('user', 'UserController@update')->name('user.update');
+    Route::get('user/{username}', 'UserController@show')->name('user.show');
+});
