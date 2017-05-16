@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'username', 'role_id',
+        'name', 'email', 'password','username', 'role_id',
     ];
 
     /**
@@ -27,9 +27,9 @@ class User extends Authenticatable
         'password', 'role_id', 'remember_token',
     ];
 
-    public function address()
+    public function contact()
     {
-        return $this->hasOne('\App\Address');
+        return $this->hasOne('\App\Contact');
     }
 
     public function role()

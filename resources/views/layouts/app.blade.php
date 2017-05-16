@@ -12,7 +12,10 @@
 
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    {{ Html::style('css/app.css') }}
+    {{ Html::style('css/font-awesome.css') }}
+
 </head>
 <body>
 <div id="app">
@@ -23,5 +26,7 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+    @yield('js')
+
 </body>
 </html>

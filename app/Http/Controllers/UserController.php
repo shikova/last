@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
+use App\Speciality;
 use App\User;
+use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -25,8 +28,9 @@ class UserController extends Controller
      */
     public function show($username)
     {
+        Mapper::map(53.381128999999990000, -1.470085000000040000);
         $user= User::where('username','=',$username)->first();
-        return view('user.public')->with('user',$user);
+        return view('user.public')->withUser($user);
     }
 
     /**
@@ -37,7 +41,9 @@ class UserController extends Controller
      */
     public function edit()
     {
-        return view('user.edit');
+        Mapper::map(53.381128999999990000, -1.470085000000040000,['draggable' => true]);
+        $ville=City::all();
+        return view('user.edit')->withVille($ville);
 
     }
 

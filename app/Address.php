@@ -10,4 +10,9 @@ class Address extends Model
     {
         return $this->belongsTo('App\ZipCode');
     }
+    public function addVisible()
+    {
+        return $this->belongsTo('App\Contact');
+
+    }
 }

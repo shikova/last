@@ -20,8 +20,6 @@ class CreateAddressesTable extends Migration
             $table->integer('city_id')->nullable()->unsigned()->index();
             $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('set null');
 
-            $table->integer('zip_code_id')->nullable()->unsigned()->index();
-            $table->foreign('zip_code_id')->references('id')->on('zip_codes')->onUpdate('cascade')->onDelete('set null');
 
 
             $table->double('latitude');

@@ -13,28 +13,48 @@ class DatabaseCitiesSeed extends Seeder
      */
     public function run()
     {
-        $list1 = array('Agadir', 'Drargua', 'Aourir', 'Tamri', 'Tiqqi', 'Amskroud', 'Imsouane', 'Imouzzer', 'Tadrart', 'Taghazout', 'Aqesri', 'Idmine', 'Aziar');
-        $list2 = array('Ait Amira', 'Ouad Essafa', 'Biougra', 'Sidi Bibi', 'Belfaa', 'Inchaden', 'Massa', 'Imi Mqourn',
-            'Ait Milk', 'Sidi Boushab', 'Sidi Abdallah El Bouchouari', 'Sidi Ouassay', 'Ait Ouadrim',
-            'Targua Ntouchka', 'Tassegdelt', 'Aouguenz', 'Ait Baha', 'Ait Mzal', 'Hilala', 'Tanalt', 'Ida Ougnidif', 'Tizi Ntakoucht');
-        $list3 = array('Ait Melloul', 'Inezgane', 'Dcheira El Jihadia', 'Lqliaa', 'Temsia', 'Oulad Dahou');
-        $list4 = array('Taroudannt', 'Oulad Teima', 'El Koudia El Beida', 'Aoulouz', 'Lagfifat', 'Oulad Berhil', 'Ahmar Laglalcha',
-            'Sidi Ahmed Ou Amar', 'Sidi Boumoussa', 'El Faid', 'Sidi Moussa Lhamri', 'Lamhadi', 'Issen', 'Lamhara', 'Igli', 'Ait Iaaza', 'Machraa El Ain',
-            'Oulad Aissa', 'Ait Igas', 'Zaouia Sidi Tahar', 'Tafraouten', 'Iguidi', 'Imoulass', 'El Guerdane', 'Toubkal', 'Sidi Borja', 'Lakhnafif',
-            'Agadir Melloul', 'Zagmouzen', 'Toughmart', 'Ouneine', 'Sidi Dahmane', 'Assaki', 'Ahl Ramel', 'Igoudar Mnabha', 'Taouyalte',
-            'Freija', 'Eddir', 'Sidi Ouaaziz', 'Sidi Hsaine', 'Ouzioua', 'Askaouen', 'Tisrasse', 'Imilmaiss', 'Imilmaiss', 'Tassousfi', 'Arazane', 'Assaisse', 'Bounrar');
-        $list5 = array('Tata', 'Tissint', 'Foum Zguid', 'Allougoum', 'Tamanarte', 'Akka', 'Fam El Hisn', 'Kasbat Sidi Abdellah Ben M\'Barek', 'Akka Ighane', 'Adis', 'Tlite'
-        , 'Tagmout', 'Tizaghte', 'Tigzmerte', 'Tagmout', 'Issafen', 'Tagmout', 'Oum El Guerdane', 'Ibn Yacoub', 'Aguinane', 'Ait Ouabelli', 'Tizounine');
-        $list6=array('Tiznit','Tnine Aglou','Reggada','Arbaa Sahel','Bounaamane','Tighmi','Arbaa Ait Ahmed','Ida Ou Gougmar','El Maader El Kabir'
-                        ,'Arbaa Rasmouka','Sidi Bouabdelli','Anzi','Ouijjane','Tizoughrane','Ait Ouafqa','Ait Issafen'
-                        ,'Tafraout','Ammelne','Sidi Ahmed Ou Moussa','Afella Ighir','Tafraout El Mouloud','Tarsouat','Tnine Aday','Irigh N\'Tahala','Tassrirt');
+        $list1 = array('Agadir'=>'80000' , 'Drargua' => 80650, 'Aourir'=> 80750 , 'Tamri'=>80502,
+            'Tiqqi'=> 80324, 'Amskroud'=>80302, 'Imouzzer'=> 80303, 'Tadrart'=>80326,'Talborjt'=>80000,
+            'Taghazout'=>80022, 'Aqesri'=>80322, 'Idmine'=>80323, 'Aziar'=>80325);
 
+
+        $list2 = array('Ait Amira'=>87052, 'Ouad Essafa'=>87223, 'Biougra'=>87200,
+            'Sidi Bibi'=>87274, 'Belfaa'=>87252, 'Inchaden'=>87272, 'Massa'=>87452,
+            'Imi Mqourn'=>87222,'Ait Milk'=>87273, 'Sidi Abdallah El Bouchouari'=>87126,
+            'Ait Ouadrim'=>87132,'Targua Ntouchka'=>87122,
+            'Ait Baha'=>87100,'Tanalt'=>87552,
+            'Ida Ougnidif'=>87402 );
+
+
+        $list3 = array('Ait Melloul'=>86150, 'Inezgane'=>86350,
+            'Dcheira El Jihadia'=>86360, 'Lqliaa'=>86356, 'Temsia'=>86602, 'Oulad Dahou'=>86622);
+
+
+        $list4 =array('Taroudannt'=>83000, 'Oulad Teima'=>83350,
+            'Aoulouz'=>83052, 'Oulad Berhil'=>83300,
+            'Issen'=>83374, 'Ait Iaaza'=>83200, 'Machraa El Ain'=>83024,
+            'Ait Igas'=>83222, 'Zaouia Sidi Tahar'=>83042,
+            'Iguidi'=>83173, 'IMILMAISS'=>83123, 'Toubkal'=>83175, 'Sidi Borja'=>83026,
+            'Lakhnafif'=>83423,'Agadir Melloul'=>83532, 'Toughmart'=>83333, 'Ouneine'=>83472,
+            'Assaki'=>83523, 'Tisrasse'=>83074);
+
+
+        $list5 = array('Tata'=>84000, 'Tissint'=>84053, 'Foum Zguid'=>84150,
+            'Allougoum'=>84172, 'Akka'=>84050,
+            'Kasbat Sidi Abdellah Ben M\'Barek'=>84100, 'Akka Ighane'=>84022, 'Tlite'=>84174,
+            'Tagmout'=>84025, 'Tizaghte'=>84075, 'Ibn Yacoub'=>84026);
+
+
+        $list6=array('Tiznit'=> 85000,'Tnine Aglou'=>85004,'Reggada'=>85023,
+            'Arbaa Sahel'=>85002,'Tighmi'=>85102,'Arbaa Ait Ahmed'=>85123,'El Maader El Kabir'=>85022,
+            'Arbaa Rasmouka'=>85152,'Sidi Bouabdelli'=>85422,'Anzi'=>85103,
+            'Tafraout'=>85450,'Tafraout El Mouloud'=>85124);
 
         $list=array('1'=>$list1,'2'=>$list2,'3'=>$list3,'4'=>$list4,'5'=>$list5,'6'=>$list6);
         foreach ($list as $k => $data)
-        foreach ($data as $item)
+        foreach ($data as $item=>$zip)
         {
-            $v = City::firstOrNew(['name' => $item,'subdivision_id' => $k]);
+            $v = City::firstOrNew(['name' => $item,'zipcode'=>$zip,'subdivision_id' => $k]);
             if (!$v->exists) {
                 $v->save();
             }

@@ -18,6 +18,7 @@ class CreateCitiesTable extends Migration
             $table->string('name');
             $table->integer('subdivision_id')->unsigned()->index();
             $table->foreign('subdivision_id')->references('id')->on('subdivisions');
+            $table->string('zipcode');
             $table->timestamps();
 
         });

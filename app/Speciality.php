@@ -11,10 +11,6 @@ class Speciality extends Model
     {
         return $this->hasMany('\App\User');
     }
-    public function category()
-    {
-        return $this->belongsTo('\App\Category');
-    }
     public function parentId()
     {
         return $this->belongsTo(self::class);
