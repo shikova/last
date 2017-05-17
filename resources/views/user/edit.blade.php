@@ -18,12 +18,7 @@
                     {{Form::text('email',null,['class'=>'form-control'])}}
                 </div>
             </div>
-            <div class="form-group">
-                {{Form::label('about','About Me :',['class'=>'col-md-3 control-label'])}}
-                <div class="col-md-9">
-                    {{Form::textarea('about',null,['class'=>'form-control','minlength'=>'5','maxlength'=>'255'])}}
-                </div>
-            </div>
+
 
             <div class=" form-group">
                 {{Form::submit('Save', ['class' => 'btn btn-success col-md-3 col-md-offset-8'])}}
@@ -31,7 +26,7 @@
             {!! Form::close() !!}
         </div>
     </div>
-
+    @include('user.partials.address_edit')
 @endsection
 
 @section('rightbar')

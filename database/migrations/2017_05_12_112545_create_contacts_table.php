@@ -15,20 +15,21 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('pro_id')->nullable()->unsigned()->index();
-            $table->foreign('pro_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('user_id')->nullable()->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 
             $table->integer('address_id')->nullable()->unsigned()->index();
             $table->foreign('address_id')->references('id')->on('addresses')->onUpdate('cascade')->onDelete('set null');
 
 //            $table->integer('speciality_id')->nullable()->unsigned()->index();
 //            $table->foreign('speciality_id')->references('id')->on('specialities')->onUpdate('cascade')->onDelete('set null');
-            $table->string("phone");
-            $table->string('fax');
-            $table->string('facebook');
-            $table->string('twitter');
-            $table->string('instagram');
-            $table->string('about');
+            $table->string("email")->nullable();
+            $table->string("phone")->nullable();
+            $table->string('fax')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('about')->nullable();
             $table->timestamps();
         });
     }

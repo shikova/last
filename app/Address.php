@@ -6,13 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
-    public function zip_code()
+    protected $fillable = ['city_id', 'latitude', 'longitude','created_at', 'updated_at'];
+
+    public function city()
     {
-        return $this->belongsTo('App\ZipCode');
+        return $this->hasOne('App\City');
     }
-    public function addVisible()
+
+    public function contact()
     {
         return $this->belongsTo('App\Contact');
-
     }
 }

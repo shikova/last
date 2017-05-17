@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserSpec extends Model
+class LanguageUser extends Model
 {
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-    public function Speciality()
+    public function Language()
     {
-        return $this->belongsTo(Speciality::class);
+        return $this->belongsTo(Language::class);
     }
 }

@@ -15,15 +15,12 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('street_address');
-
-            $table->integer('city_id')->nullable()->unsigned()->index();
+            $table->string('street_address')->nullable();
+            $table->integer('city_id')->default('1')->nullable()->unsigned()->index();
             $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('set null');
 
-
-
-            $table->double('latitude');
-            $table->double('longitude');
+            $table->double('latitude')->default('30.66667');
+            $table->double('longitude')->default('-7.5');
             $table->timestamps();
 
         });

@@ -45,7 +45,7 @@ class User extends Authenticatable
         return 'no';
     }
 
-    public function isPro()
+    public function isDoc()
     {
         if ($this->role_id ==3)
             return 'yes';
@@ -60,5 +60,8 @@ class User extends Authenticatable
 
         return 'no';
     }
-
+    public function user()
+    {
+        return $this->belongsToMany(LanguageUser::class);
+    }
 }

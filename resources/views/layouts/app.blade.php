@@ -15,6 +15,7 @@
 
     {{ Html::style('css/app.css') }}
     {{ Html::style('css/font-awesome.css') }}
+    {{ Html::style('css/select2.min.css') }}
 
 </head>
 <body>
@@ -26,7 +27,7 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/select2.js') }}"></script>
     @yield('js')
-
 </body>
 </html>

@@ -10,4 +10,8 @@ class City extends Model
     {
         return $this->belongsTo('App\Subdivision');
     }
+    public function addresses()
+    {
+        return $this->belongsToMany('App\Address');
+    }
 }
