@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Role;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Address;
+use App\Contact;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -71,5 +76,29 @@ class RegisterController extends Controller
             'role_id'=>$data['role'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+    public function showRegistrationForm()
+    {
+        $role=Role::all();
+        unset($role[0]);
+        return view('auth.register')->with('role',$role);
+    }
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+        if ($user->role_id!=1||$user->role_id!=2)
+        {$adress = new Address;
+            $adress->save();
+            $contact=Contact::firstOrNew(['user_id'=>$user->id,'address_id'=>$adress->id]);
+            $contact->save();
+        }
+
+        $this->guard()->login($user);
+        //associate contact
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
 }
