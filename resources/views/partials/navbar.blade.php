@@ -25,23 +25,23 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ url('/') }}"><strong>Home</strong></a></li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Categories<span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown"><strong>Categories</strong><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Doctors</a></li>
-                        <li><a href="#">Hospitals</a></li>
-                        <li><a href="#">Pharmacies</a></li>
+                        <li><a href="#"><strong>Doctors</strong></a></li>
+                        <li><a href="#"><strong>Hospitals</strong></a></li>
+                        <li><a href="#"><strong>Pharmacies</strong></a></li>
                     </ul>
                 </li>
-                <li><a href="{{url('/blog')}}">Blog</a></li>
+                <li><a href="{{url('/blog')}}"><strong>Blog</strong></a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="{{ url('/packages') }}">Packages</a></li>
-                <li><a href="{{ url('/contact') }}">Contact us</a></li>
+                <li><a href="{{ url('/packages') }}"><strong>Packages</strong></a></li>
+                <li><a href="{{ url('/contact') }}"><strong>Contact us</strong></a></li>
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
+                    <li><a href="{{ route('login') }}"><strong>Login</strong></a></li>
+                    <li><a href="{{ route('register') }}"><strong>Register</strong></a></li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">

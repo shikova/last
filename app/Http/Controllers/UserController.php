@@ -28,9 +28,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($username)
-    {
-        Mapper::map(31.1806282, -9.892244);
-        $user= User::where('username','=',$username)->first();
+    {   $user= User::where('username','=',$username)->first();
+        $add=$user->contact->address;
+        Mapper::map($add->latitude,$add->longitude);
         return view('user.public')->withUser($user);
     }
 
@@ -45,8 +45,8 @@ class UserController extends Controller
         $con=Auth::user()->contact;
         $add=$con->address;
         Mapper::map($add->latitude,$add->longitude,['draggable' => true]);
-        $ville=City::all();
-        return view('user.edit')->withVille($ville);
+        $data=array('ville'=>City::all(),'userV'=>$add->city_id);
+        return view('user.edit')->withData($data);
     }
 
     /**
@@ -70,14 +70,19 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('user.edit');
     }
+    public function address(Request $request)
+    {
+        $contact=Auth::user()->contact;
+        $add=$contact->address;
+        $add->street_address=$request->input('street_address');
+        $add->city_id=$request->input('city_id');
+        $add->latitude=$request->input('latitude');
+        $add->longitude=$request->input('longitude');
+        $add->save();
+        return redirect()->route('user.edit');
+    }
     public function contact(Request $request)
     {
-        //Validate the data
-//        $this->validate($request,array(
-//            'name' => 'required|string|max:255',
-//            'email' => 'required|string|email|max:255|unique:users',
-//        ));
-        //save the data to the database
         $contact=Auth::user()->contact;
         $contact->email=$request->input('email');
         $contact->phone=$request->input('phone');

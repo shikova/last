@@ -1,95 +1,128 @@
-<!doctype html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-md-7 col-lg-7 ">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="{{asset('storage/doctor.jpg')}}" width="100%" alt="Image">
+                        </div>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
+                        <div class="item">
+                            <img src="{{asset('storage/dentist.jpg')}}" alt="Image">
+                        </div>
+                        <div class="item">
+                            <img src="{{asset('storage/hospital.jpeg')}}" alt="Image">
+                        </div>
+                    </div>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+            </div>
+            <div class="col-sm-5">
+                <div class="input-group" id="adv-search">
+                    <input type="text" class="form-control" placeholder="Search for snippets" />
+                    <div class="input-group-btn">
+                        <div class="btn-group" role="group">
+                            <div class="dropdown dropdown-lg">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                                <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label for="filter">Filter by</label>
+                                            <select class="form-control">
+                                                <option value="0" selected>All Snippets</option>
+                                                <option value="1">Featured</option>
+                                                <option value="2">Most popular</option>
+                                                <option value="3">Top rated</option>
+                                                <option value="4">Most commented</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contain">Author</label>
+                                            <input class="form-control" type="text" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contain">Contains the words</label>
+                                            <input class="form-control" type="text" />
+                                        </div>
+                                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            </div>
+        </div>
+        <hr>
+    </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+    <div class="container text-center">
+        <h3>What We Do</h3>
+        <br>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                <p>Current Project</p>
+            </div>
+            <div class="col-sm-3">
+                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                <p>Project 2</p>
+            </div>
+            <div class="col-sm-3">
+                <div class="well">
+                    <p>Some text..</p>
+                </div>
+                <div class="well">
+                    <p>Some text..</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well">
+                    <p>Some text..</p>
+                </div>
+                <div class="well">
+                    <p>Some text..</p>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <hr>
+    </div>
+
+    <div class="container text-center">
+        <h3>Our Partners</h3>
+        <br>
+        <div class="row">
+            <div class="col-sm-2">
+                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                <p>Partner 1</p>
+            </div>
+            <div class="col-sm-2">
+                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                <p>Partner 2</p>
+            </div>
+            <div class="col-sm-2">
+                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                <p>Partner 3</p>
+            </div>
+            <div class="col-sm-2">
+                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                <p>Partner 4</p>
+            </div>
+            <div class="col-sm-2">
+                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                <p>Partner 5</p>
+            </div>
+            <div class="col-sm-2">
+                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                <p>Partner 6</p>
+            </div>
+        </div>
+    </div><br>
+
+@endsection
