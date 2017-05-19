@@ -64,4 +64,8 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(LanguageUser::class);
     }
+    public function reviews()
+    {
+        return $this->hasMany('\App\Review');
+    }
 }

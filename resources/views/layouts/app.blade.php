@@ -8,15 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') }}- @yield('title')</title>
+    <title>@yield('title')</title>
 
 
-    <!-- Styles -->
+    @include('partials.styles')
 
-    {{ Html::style('css/app.css') }}
-    {{ Html::style('css/font-awesome.css') }}
-    {{ Html::style('css/select2.min.css') }}
-    {{ Html::style('css/normalize.css') }}
 
 </head>
 <body>
@@ -26,9 +22,8 @@
     @yield('content')
 </div>
 
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/select2.js') }}"></script>
-    @yield('js')
+
+@include('partials.scripts')
+
 </body>
 </html>

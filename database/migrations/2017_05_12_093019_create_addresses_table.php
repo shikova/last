@@ -18,11 +18,9 @@ class CreateAddressesTable extends Migration
             $table->string('street_address')->nullable();
             $table->integer('city_id')->default('1')->nullable()->unsigned()->index();
             $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('set null');
-
-            $table->double('latitude')->default('30.66667');
-            $table->double('longitude')->default('-7.5');
+            $table->double('latitude')->nullable();
+            $table->double('longitude')->nullable();
             $table->timestamps();
-
         });
     }
 

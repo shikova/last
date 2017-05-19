@@ -6,7 +6,6 @@
 @section('user_content')
 
     <div class="panel panel-default">
-        <div class="panel-heading">About : {{$user->name}}</div>
         <div class="panel-body">
             <p>{{$user->contact->about}}</p>
         </div>
@@ -17,5 +16,5 @@
 
 @endsection
 @section('rightbar')
-    @include('user.partials.rightbar')
+    @include('user.public.rightbar')
 @endsection

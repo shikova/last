@@ -10,7 +10,7 @@
             <div class="col-md-8 ">
                 <select id="city_id" name="city_id" class="form-control cities_select">
                     @foreach($data['ville'] as $value)
-                        @if($data['userV']===$value->id)
+                        @if(Auth::user()->contact->address->city_id===$value->id)
                             <option value="{{$value->id}}" selected>{{$value->name}}</option>
                         @else
                             <option value="{{$value->id}}">{{$value->name}}</option>

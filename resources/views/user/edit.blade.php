@@ -22,6 +22,13 @@
         $(".cities_select").select2({
             maximumSelectionLength: 2
         });
+        $("#profile").click(function() {
+            $("input[id='profile-image']").click();
+        });
+        $('#profile-image').change(function(){
+            $('.profile-form').submit();
+        });
+        $('div.alert').delay(3000).slideUp(300);
 
     </script>
 @endsection

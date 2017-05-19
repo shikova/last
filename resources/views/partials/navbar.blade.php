@@ -72,7 +72,11 @@
                                 </div>
                             </li>
                             <li class="divider navbar-login-session-bg"></li>
-                            <li><a href="{{route('user.edit')}}">Account Settings <span
+                            <li><a href="{{route('user.edit.profile')}}">Profile Settings <span
+                                            class="glyphicon glyphicon-cog pull-right"></span></a></li>
+
+                            <li class="divider"></li>
+                            <li><a href="{{route('user.edit.account')}}">Account Settings <span
                                             class="glyphicon glyphicon-cog pull-right"></span></a></li>
 
                             <li class="divider"></li>
