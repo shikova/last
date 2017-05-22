@@ -9,10 +9,7 @@ class Speciality extends Model
 
     public function users()
     {
-        return $this->hasMany('\App\User');
+        return $this->belongsToMany('\App\UserSpec');
     }
-    public function parentId()
-    {
-        return $this->belongsTo(self::class);
-    }
+
 }

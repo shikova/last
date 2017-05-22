@@ -23,6 +23,7 @@
     <div style="width: 100%; height: 350px;">
         {!! Mapper::render() !!}
     </div>
+    @include('user.public.video')
 @endsection
 
 

@@ -7,9 +7,9 @@
             {{Form::label('old_password','Old Password :',['class'=>'col-md-4 control-label'])}}
             <div class="col-md-8">
                 <input name="old_password" type="password" value="" id="old_password" class="form-control">
-                @if ($errors->has('password'))
+                @if ($errors->has('old_password'))
                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $errors->first('old_password') }}</strong>
                     </span>
                 @endif
             </div>
@@ -28,7 +28,7 @@
         <div class="form-group {{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
             {{Form::label('password_confirmation','Password Confirmation :',['class'=>'col-md-4 control-label'])}}
             <div class="col-md-8">
-                <input name="password" type="password" value="" id="password" class="form-control">
+                <input name="password_confirmation" type="password" value="" id="password_confirmation" class="form-control">
                 @if ($errors->has('password_confirmation'))
                     <span class="help-block">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>

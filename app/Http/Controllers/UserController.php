@@ -48,7 +48,7 @@ class UserController extends Controller
         $con = Auth::user()->contact;
         $add = $con->address;
         Mapper::map($add->latitude, $add->longitude, ['draggable' => true]);
-        $data = array('ville' => City::all());
+        $data = array('ville' => City::all(),'specialities'=>Speciality::all());
         return view('user.private.profile_edit')->withData($data);
     }
 
@@ -156,7 +156,7 @@ class UserController extends Controller
         if (Hash::check($request->input('old_password'), $user->password)) {
             // The passwords match...
             //save the data to the database
-            $user->password = $request->input('password');
+            $user->password =bcrypt( $request->input('password'));
             $user->save();
             session()->flash('message', 'password updated successfully');
             session()->flash('alert-class', 'alert-success');

@@ -11,6 +11,7 @@
 @endsection
 
 @section('user_content')
+    @include('user.private.partials.test')
 
     @include('user.private.partials.address_edit')
 
@@ -35,6 +36,8 @@
         $(".cities_select").select2({
             maximumSelectionLength: 2
         });
+        $(".spec_multiple").select2();
+
         $("#profile").click(function() {
             $("input[id='profile-image']").click();
         });

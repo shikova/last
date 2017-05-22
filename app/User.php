@@ -68,4 +68,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('\App\Review');
     }
+    public function specialities()
+    {
+        return $this->belongsToMany('App\UserSpec');
+    }
 }

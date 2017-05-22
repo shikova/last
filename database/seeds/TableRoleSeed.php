@@ -24,18 +24,11 @@ class TableRoleSeed extends Seeder
                 'display_name' => 'Normal User',
             ])->save();
         }
-        $role = Role::firstOrNew(['name' => 'Doctor']);
+        $role = Role::firstOrNew(['name' => 'pro']);
         if (!$role->exists) {
             $role->fill([
-                'display_name' => 'Doctor',
+                'display_name' => 'Professional',
             ])->save();
         }
-        $role = Role::firstOrNew(['name' => 'Establishment ']);
-        if (!$role->exists) {
-            $role->fill([
-                'display_name' => 'Establishment',
-            ])->save();
-        }
-
     }
 }

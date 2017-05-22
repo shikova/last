@@ -40,6 +40,12 @@
             </div>
         </div>
         <div class="form-group">
+            {{Form::label('youtube',' ',['class'=>'fa fa-youtube fa-2x col-md-2 control-label'])}}
+            <div class="col-md-10">
+                {{Form::text('youtube',null,['class'=>'form-control','placeholder'=>'Youtube Username'])}}
+            </div>
+        </div>
+        <div class="form-group">
             {{Form::label('about',' ',['class'=>'fa fa-flag col-md-2 fa-2x control-label'])}}
             <div class="col-md-10">
                 {{Form::textarea('about',null,['class'=>'form-control','placeholder'=>'about '.Auth::user()->name,'rows'=>'5','maxlength'=>'190'])}}
