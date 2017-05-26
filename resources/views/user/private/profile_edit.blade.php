@@ -11,7 +11,6 @@
 @endsection
 
 @section('user_content')
-    @include('user.private.partials.test')
 
     @include('user.private.partials.address_edit')
 

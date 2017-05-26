@@ -6,7 +6,7 @@
 
 @section('left_bar')
 
-    {{--@include('')--}}
+    @include('user.public.leftbar')
 
 @endsection
 
@@ -20,10 +20,19 @@
             </p>
         </div>
     </div>
-    <div style="width: 100%; height: 350px;">
-        {!! Mapper::render() !!}
+    <div class="panel panel-default">
+        <div class="panel-heading">Geolocation</div>
+
+        <div class="panel-body">
+            <div style="width: 100%; height: 350px;">
+                {!! Mapper::render() !!}
+            </div>
+        </div>
     </div>
+
     @include('user.public.video')
+
+
 @endsection
 
 

@@ -48,3 +48,25 @@
         </ul>
     </div>
 </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Slid Show</div>
+
+    <div class="panel-body">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="{{asset('storage/doctor.jpg')}}" width="100%" alt="Image">
+                </div>
+
+                <div class="item">
+                    <img src="{{asset('storage/dentist.jpg')}}" alt="Image">
+                </div>
+                <div class="item">
+                    <img src="{{asset('storage/hospital.jpeg')}}" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
